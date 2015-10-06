@@ -3,9 +3,9 @@ require "pry"
 require "json"
 
  keys = File.read "./auth_key.txt"
- #puts "What organization are you looking at?"
- # answer = gets.chomp
- org = "Rails" #answer
+ puts "What organization are you looking at?"
+  answer = gets.chomp
+ org = answer
 
  response = HTTParty.get "https://api.github.com/orgs/#{org}/members", headers: {
   "Authorization"=> "token #{keys}",
